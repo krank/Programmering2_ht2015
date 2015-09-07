@@ -10,6 +10,7 @@ namespace HangManGrp1
     {
         static void Main(string[] args)
         {
+
             
             // Skapa variabeln correctWord och tilldela den ett slumpmässigt ord som genereras av metoden randomWord
             string correctWord = randomWord();
