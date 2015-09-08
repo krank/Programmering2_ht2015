@@ -21,7 +21,11 @@ namespace HangManGrp1
 
             List<char> wrongLetters = new List<char>();
 
-            while (wrongLetters.Count <= 6) { 
+            while (wrongLetters.Count <= 6 && underscores.Contains<char>('_')) {
+
+                Console.Write("Redan gissade: ");
+                writeArray(wrongLetters.ToArray<char>());
+                
 
                 // Skriv ut underscores
                 writeArray(underscores);
@@ -51,6 +55,15 @@ namespace HangManGrp1
 
                 }
 
+            }
+
+            if (wrongLetters.Count <= 6)
+            {
+                Console.WriteLine("#WINNING");
+            }
+            else
+            {
+                Console.WriteLine("Loser!");
             }
 
             Console.WriteLine("Spelet är slut!");
