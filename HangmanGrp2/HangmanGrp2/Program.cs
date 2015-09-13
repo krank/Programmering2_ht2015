@@ -20,12 +20,22 @@ namespace HangmanGrp2
                 underscores[i] = '_';
             }
 
-            writeCharArray(underscores);
+            while ( underscores.Contains<char>('_') ) { 
+                writeCharArray(underscores);
 
-            string guessTemp = Console.ReadLine();
-            char guess = guessTemp[0];
-
+                string guessTemp = Console.ReadLine();
+                char guess = guessTemp[0];
             
+                for (int i=0; i < correctWord.Length; i++)
+                {
+                    if (correctWord[i] == guess)
+                    {
+                        underscores[i] = correctWord[i];
+                    }
+                }
+            }
+
+            writeCharArray(underscores);
 
             Console.ReadLine();
         }
