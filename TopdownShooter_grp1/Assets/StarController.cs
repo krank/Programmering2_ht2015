@@ -16,7 +16,7 @@ public class StarController : MonoBehaviour
 
         this.transform.position = newPos;
 
-        float size = Random.Range(0.5f, 1);
+        float size = Random.Range(0.01f, 0.1f);
         Vector3 newSize = new Vector3(size, size);
         this.transform.localScale = newSize;
     }
