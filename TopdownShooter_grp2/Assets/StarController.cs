@@ -10,6 +10,19 @@ public class StarController : MonoBehaviour
     void Start()
     {
         speed = Random.Range(0.03f, 0.3f);
+
+        float randomX = Random.Range(-3f, 3f);
+        float randomY = Random.Range(-5f, 5f);
+
+        Vector3 newPos = new Vector3(randomX, randomY);
+        this.transform.position = newPos;
+
+
+        float size = Random.Range(0.01f, 0.1f);
+        Vector3 newScale = new Vector3(size, size);
+
+        this.transform.localScale = newScale;
+
     }
 
     // Update is called once per frame
