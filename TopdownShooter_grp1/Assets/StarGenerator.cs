@@ -9,11 +9,11 @@ public class StarGenerator : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        for (int i=0; i<100; i++)
+        for (int i = 0; i < 100; i++)
         {
             Instantiate(star);
         }
-        
+
     }
 
 }

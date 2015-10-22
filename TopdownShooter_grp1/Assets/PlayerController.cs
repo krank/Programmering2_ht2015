@@ -31,4 +31,15 @@ public class PlayerController : MonoBehaviour
             this.transform.Translate(new Vector3(0, -speed * yMovement));
         }
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "asteroid")
+        {
+
+            Destroy(other.gameObject);
+        }
+
+    }
+
 }
