@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
             this.transform.Translate(new Vector3(-speed * xMovement, 0));
         }
 
-        if (this.transform.position.y > 5 || this.transform.position.x < -5)
+        if (this.transform.position.y > 5 || this.transform.position.y < -5)
         {
             this.transform.Translate(new Vector3(0, -speed * yMovement));
         }
