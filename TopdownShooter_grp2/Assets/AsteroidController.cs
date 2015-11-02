@@ -11,7 +11,7 @@ public class AsteroidController : MonoBehaviour {
         toMove = new Vector3(0, -speed);
 
         float randomX = Random.Range(-3f, 3f);
-        Vector3 newPos = new Vector3(randomX, 5);
+        Vector3 newPos = new Vector3(randomX, 5, -1);
 
         this.transform.position = newPos;
 
@@ -24,7 +24,6 @@ public class AsteroidController : MonoBehaviour {
         if (this.transform.position.y < -6)
         {
             Destroy(this.gameObject);
-            Debug.Log("NOOOOOOOOO");
         }
 	}
 }
