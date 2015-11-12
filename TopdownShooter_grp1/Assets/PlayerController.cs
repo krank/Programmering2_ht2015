@@ -1,9 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     float speed = 0.05f;
+
+    int hp = 3;
+
+    public AsteroidGenerator ass;
+    public Text gameOverText;
+    public Button restartButton;
+
+    public Image healthBar;
 
     // Use this for initialization
     void Start()
@@ -38,6 +47,22 @@ public class PlayerController : MonoBehaviour
         {
 
             Destroy(other.gameObject);
+
+            hp -= 1;
+
+            healthBar.rectTransform.sizeDelta = new Vector3(100 * hp, 20);
+
+            if (hp <= 0)
+            {
+                Debug.Log("GAME OVER MAN, GAME OVER");
+
+                gameOverText.gameObject.SetActive(true);
+                restartButton.gameObject.SetActive(true);
+
+                ass.gameObject.SetActive(false);
+                this.gameObject.SetActive(false);
+            }
+
         }
 
     }
