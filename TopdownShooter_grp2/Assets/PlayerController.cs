@@ -5,6 +5,11 @@ public class PlayerController : MonoBehaviour
 {
 
     public float speed = 0.03f;
+    public int hp = 3;
+
+    public GameObject hpBar;
+    public Canvas gameOverScreen;
+    public Canvas healthScreen;
 
     // Use this for initialization
     void Start()
@@ -40,6 +45,15 @@ public class PlayerController : MonoBehaviour
         if (coll.gameObject.tag == "asteroid")
         {
             Destroy(coll.gameObject);
+            hp -= 1;
+            hpBar.transform.localScale = new Vector2(hp / 3f, 1);
+
+            if (hp <= 0)
+            {
+                gameOverScreen.gameObject.SetActive(true);
+                healthScreen.gameObject.SetActive(false);
+                this.gameObject.SetActive(false);
+            }
         }
     }
 }
