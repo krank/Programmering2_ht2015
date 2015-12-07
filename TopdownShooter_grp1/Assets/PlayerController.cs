@@ -12,12 +12,15 @@ public class PlayerController : MonoBehaviour
     public Text gameOverText;
     public Button restartButton;
 
+    public AudioClip explosionAudio;
+    AudioSource speaker;
+
     public Image healthBar;
 
     // Use this for initialization
     void Start()
     {
-
+        speaker = this.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -47,9 +50,10 @@ public class PlayerController : MonoBehaviour
         {
 
             Destroy(other.gameObject);
+            speaker.PlayOneShot(explosionAudio);
 
             hp -= 1;
-
+            
             healthBar.rectTransform.sizeDelta = new Vector3(100 * hp, 20);
 
             if (hp <= 0)
