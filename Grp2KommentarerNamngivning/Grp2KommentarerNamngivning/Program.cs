@@ -10,10 +10,10 @@ namespace Grp2KommentarerNamngivning
     {
         static void Main(string[] args)
         {
-            // CamelCase - allt utom variabler
+            // PascalCase - allt utom variabler
             int EttHeltal = 9;
 
-            // pascalCase - variabler
+            // camelCase - variabler
             int ettHelTal = 9;
 
             // en_till_fiende
