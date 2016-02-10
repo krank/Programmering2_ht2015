@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayerController : MonoBehaviour {
 
     public float speed = 2f;
+    public GameObject bombPrefab;
 
     private Rigidbody2D rigidBody;
 
@@ -22,6 +23,13 @@ public class PlayerController : MonoBehaviour {
         //this.transform.Translate(movement);
 
         rigidBody.position += movement;
+
+        float fire = Input.GetAxisRaw("Fire1");
+
+        if (fire != 0)
+        {
+            Instantiate(bombPrefab, this.transform.position, Quaternion.identity);
+        }
 
 	}
 }
