@@ -36,11 +36,9 @@ public class Grid : MonoBehaviour {
 
         Vector3 pos = GetUnityPos(x, y);
         obj.transform.position = pos;
-<<<<<<< HEAD
 
         obj.transform.SetParent(this.transform);
-=======
->>>>>>> 4121e97f44c3f80b9c0a69c92228a8b3e0098b19
+
     }
 
 }
