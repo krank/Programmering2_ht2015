@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GrassGrid : Grid {
 
-    public void Generate()
+    public override void Generate()
     {
         for (int y = 0; y < sizeY; y++)
         {

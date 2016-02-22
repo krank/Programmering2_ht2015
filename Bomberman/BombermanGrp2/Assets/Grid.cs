@@ -20,7 +20,7 @@ public class Grid : MonoBehaviour
         Generate();
     }
 
-    public void Generate()
+    public virtual void Generate()
     {
 
     }
