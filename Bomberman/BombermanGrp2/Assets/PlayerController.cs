@@ -5,8 +5,12 @@ public class PlayerController : MonoBehaviour
 {
 
     public float speed = 2;
+    public GameObject bombPrefab;
+    public Grid gameGrid;
 
     private Rigidbody2D rigidBody;
+
+
 
     // Use this for initialization
     void Start()
@@ -28,5 +32,13 @@ public class PlayerController : MonoBehaviour
         //this.transform.position += movement;
 
         rigidBody.position += movement;
+
+        if (Input.GetAxisRaw("Fire1") > 0)
+        {
+            GameObject newBomb = (GameObject) Instantiate(bombPrefab);
+
+            gameGrid.putObjectAt(this.transform.position, newBomb);
+
+        }
     }
 }

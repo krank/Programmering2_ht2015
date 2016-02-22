@@ -4,34 +4,54 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FIlhanteringFacitGrp2
+namespace FilhanteringFacitGrp2
 {
     class Program
     {
         static void Main(string[] args)
         {
-            ListFromFile("test.txt");
+            HighScoreManager hm = new HighScoreManager();
+
+            hm.LoadFromFile();
+
+            hm.AddScore(66, "Rundlöf");
+
+            hm.PrintAll();
+
+            hm.SaveToFile();
+
+
+            /*Enemy e1 = new Enemy();
+            Enemy e2 = new Enemy();
+
+            Console.WriteLine(e1.name);
+            Console.WriteLine(e2.name);*/
+
+
             Console.ReadLine();
         }
 
         public static List<string> ListFromFile(string fileName)
         {
+            List<string> rowList = new List<string>();
+
+            if (!System.IO.File.Exists(fileName))
+            {
+                rowList.Add("FILE NOT FOUND");
+                return rowList;
+            }
+
             String content = System.IO.File.ReadAllText(@fileName);
 
             string[] rows = content.Split('\n');
 
-            List<string> rowList = new List<string>();
-
-            for (var i=0; i<rows.Length; i++)
+            for (var i = 0; i < rows.Length; i++)
             {
-
                 if (rows[i].Length > 1)
                 {
                     rowList.Add(rows[i]);
                 }
             }
-
-            Console.WriteLine(rowList.Count);
 
             return rowList;
         }

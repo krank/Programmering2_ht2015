@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class Grid : MonoBehaviour
 {
@@ -34,6 +35,17 @@ public class Grid : MonoBehaviour
         objects[x, y] = obj;
 
         obj.transform.SetParent(this.transform);
+    }
+    
+    public void putObjectAt(Vector3 unityPos, GameObject obj)
+    {
+        Vector3 localPos = unityPos - this.transform.position;
+
+        int x = (int) Math.Round(localPos.x / sizeOfTile);
+        int y = (int)Math.Round(localPos.y / sizeOfTile);
+
+        putObjectAt(x, y, obj);
+        
     }
 
 }
