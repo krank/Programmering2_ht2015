@@ -11,6 +11,13 @@ public class GameGrid : Grid
         {
             for (int x = 0; x < sizeX; x++)
             {
+                /*x == 0 || 
+                    y == 0 ||
+                    x == sizeX -1 ||
+                    y == sizeY -1 ||
+                    (x % 2 == 0 && y % 2 == 0*/
+
+
                 if (x == 0 || 
                     y == 0 ||
                     x == sizeX -1 ||

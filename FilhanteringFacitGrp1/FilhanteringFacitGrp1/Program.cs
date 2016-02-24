@@ -10,10 +10,17 @@ namespace FilhanteringFacitGrp1
     {
         static void Main(string[] args)
         {
+            HighScoreManager hm = new HighScoreManager();
+            hm.LoadFromFile();
+            hm.AddScore(9001, "Micke");
+            hm.PrintAll();
 
+            hm.SaveToFile();
+
+            Console.ReadLine();
         }
 
-        static List<String> ListFromFile(string fileName)
+        public static List<String> ListFromFile(string fileName)
         {
             List<string> rowsClean = new List<string>();
 
