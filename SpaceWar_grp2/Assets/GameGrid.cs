@@ -4,32 +4,16 @@ using System.Collections;
 public class GameGrid : Grid
 {
 
+    public GameObject playerOneShip;
 
     public override void Generate()
     {
-        for (int y = 0; y < sizeY; y++)
-        {
-            for (int x = 0; x < sizeX; x++)
-            {
-                /*x == 0 || 
-                    y == 0 ||
-                    x == sizeX -1 ||
-                    y == sizeY -1 ||
-                    (x % 2 == 0 && y % 2 == 0*/
+        putObjectAt(0, 0, playerOneShip);
 
+        ShipController sc = playerOneShip.GetComponent<ShipController>();
 
-                if (x == 0 || 
-                    y == 0 ||
-                    x == sizeX -1 ||
-                    y == sizeY -1 ||
-                    (x % 2 == 0 && y % 2 == 0)
-                    )
-                {
-                    GameObject thing = (GameObject)Instantiate(prefab);
+        sc.gridX = 0;
+        sc.gridY = 0;
 
-                    putObjectAt(x, y, thing);
-                }
-            }
-        }
     }
 }

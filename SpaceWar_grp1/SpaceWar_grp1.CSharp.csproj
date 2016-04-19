@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{634AE035-C3D5-5269-978F-031F2F79BF74}</ProjectGuid>
+    <ProjectGuid>{B2C8F1C3-E238-D64C-0A78-C9BF2D4B0BE6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AssemblyName>Assembly-CSharp</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -69,9 +69,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\GameGrid.cs" />
     <Compile Include="Assets\Grid.cs" />
-    <Compile Include="Assets\ShipController.cs" />
     <Compile Include="Assets\TileController.cs" />
     <Compile Include="Assets\TileGrid.cs" />
   </ItemGroup>

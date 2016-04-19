@@ -8,25 +8,29 @@ public class TileController : MonoBehaviour {
     Color canMove = Color.green;
     Color cantMove = Color.red;
 
+    Renderer tileRenderer;
+
     void Start()
     {
-        Renderer r = this.GetComponent<Renderer>();
+        tileRenderer = this.GetComponent<Renderer>();
 
-        r.material.color = ordinary;
+        tileRenderer.material.color = ordinary;
     } 
 
     void OnMouseEnter()
     {
-        Renderer r = this.GetComponent<Renderer>();
-
-        r.material.color = mouseOver;
+        tileRenderer.material.color = mouseOver;
     }
 
     void OnMouseExit()
     {
-        Renderer r = this.GetComponent<Renderer>();
+        tileRenderer.material.color = ordinary;
+    }
 
-        r.material.color = ordinary;
+    public void ChangeColor(Color newColor)
+    {
+        ordinary = newColor;
+        tileRenderer.material.color = ordinary;
     }
 	
 }

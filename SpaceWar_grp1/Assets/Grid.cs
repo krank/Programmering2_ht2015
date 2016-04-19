@@ -48,15 +48,4 @@ public class Grid : MonoBehaviour
         
     }
 
-    public GameObject getObjectAt(int x, int y)
-    {
-        if (x < 0 || x >= sizeX || y < 0 || y >= sizeY)
-        {
-            return null;
-        }
-
-
-        return objects[x, y];
-    }
-
 }
